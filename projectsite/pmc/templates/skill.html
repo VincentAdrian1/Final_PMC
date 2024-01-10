@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>Skill</title>
+</head>
+<body>
+    {% block content %}
+    {% include 'include/header.html' %}
+        <div class="container"><br/><br/>
+            {% for indiv in skill %}
+            <table>
+                <tr>
+                    <th>{{ indiv }}</th>
+                </tr>
+                <tr>
+                    <td>{{ indiv.description }}</td>
+                </tr>         
+            </table>
+            {% endfor %}
+        </div>
+    
+        <br><br>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+            {% if skill.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo First</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ skill.previous_page_number }}">Previous</a></li>
+            {% endif %}
+            <li class="page-item disabled"><a class="page-link">Page {{ skill.number }} of {{ skill.paginator.num_pages }}</a></li>
+            {% if skill.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ skill.next_page_number }}">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ skill.paginator.num_pages }}">Last &raquo</a></li>
+            {% endif %}
+            </ul>
+        </nav>
+
+    {% include 'include/footer.html' %}
+    {% endblock %}
+    
+</body>
+</html>

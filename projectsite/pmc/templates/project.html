@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>Project</title>
+</head>
+<body class="with-image">
+    {% block content %}
+    {% include 'include/header.html' %}
+
+    {% for indiv in project %}
+        <div class="container container_image"><br/><br/>
+            <div class="dep_box">
+                <div class="dep_image">
+                    <img class="resized_image" src="{{ indiv.project_image.url }}" alt="">
+                </div>
+                <table>
+                    <tr>
+                        <th class="th_center">{{ indiv.title }}</th>
+                    </tr>
+                    <tr>
+                        <td>Description: {{ indiv.description }}</td>
+                    </tr>
+                    <tr>
+                        <td>Start date: {{ indiv.start_date }}</td>
+                    </tr>
+                    <tr>
+                        <td>End date: {{ indiv.end_date }}</td>
+                    </tr>
+                    {% for contractor in indiv.contractor.all %}
+                        <tr>
+                            <td>Contractor: {{ contractor.name }}</td>
+                        </tr>
+                    {% endfor %}         
+                </table>
+            </div>
+        </div>
+    {% endfor %}
+
+    <br><br>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if project.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ project.previous_page_number }}">Previous</a></li>
+            {% endif %}
+            <li class="page-item disabled"><a class="page-link">Page {{ project.number }} of {{ project.paginator.num_pages }}</a></li>
+            {% if project.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ project.next_page_number }}">Next</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ project.paginator.num_pages }}">Last &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    {% include 'include/footer.html' %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,175 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Roboto Slab', sans-serif;
+    background: url('../images/bgg.jpg') center fixed;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Styles */
+main {
+    padding: 60px 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #ebe8e8;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer Columns Styles */
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+/* Footer Links Styles */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Social Icons Styles */
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons li {
+    margin: 0 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: black;
+    padding: 0 15px;
+    font-size: 20px;
+}
+
+/* Copyright Styles */
+.copyright {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+/* Company Styles */
+.company {
+    font-size: 36px; /* Adjusted for a more formal look */
+    color: #333;
+    font-weight: 700;
+}
+
+.company_nav a {
+    text-decoration: none;
+    padding: 15px 15px;
+    color: #333;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color: #ebe8e8;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Hover Effect Styles */
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Page Link Styles */
+.page-link {
+    text-decoration: none;
+    color: black;
+}
+
+/* Image Container Styles */
+.container_image {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f5f5f5b7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h1 {
+    color: #333;
+    font-size: 28px; /* Adjusted for a more formal look */
+    font-weight: 700;
+}
+
+/* Paragraph Styles */
+p {
+    color: #666;
+    font-size: 16px; /* Adjusted for a more formal look */
+}
+
+/* Centered Image Container Styles */
+.container_image.with_image {
+    text-align: center;
+    display: inline-block;
+    margin: 0 60px 60px;
+    border: 1px solid #333;
+    width: 400px;
+    height: 400px;
+}
+
+/* Centered Text Styles */
+.th_center {
+    text-align: center;
+}

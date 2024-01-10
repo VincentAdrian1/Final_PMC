@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>Home</title>
+</head>
+<body>
+    {% block content %}
+        {% include 'include/header.html' %}
+            <div class="container company_nav"><br/><br/>
+                <h1 class="company">ApexDefense Solutions</h1>
+                <a href="{% url 'contractor' %}">Contractor</a>
+                <a href="{% url 'experience' %}">Experience</a>
+                <a href="{% url 'project' %}">Project</a>
+                <a href="{% url 'skill' %}">Skill</a>
+            </div>
+        {% include 'include/footer.html' %}
+    {% endblock %}
+</body>
+</html>

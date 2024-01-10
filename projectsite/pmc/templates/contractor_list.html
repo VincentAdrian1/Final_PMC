@@ -1,0 +1,14 @@
+{% extends 'contractor_app/base.html' %}
+
+{% block title %}Contractors List{% endblock %}
+
+{% block content %}
+  <h1>Contractors List</h1>
+  <ul>
+    {% for contractor in contractors %}
+      <li><a href="{% url 'contractor_detail' contractor.id %}">{{ contractor.contractor_name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+
